@@ -76,6 +76,7 @@
                 <span class="timepicker-title label label-primary">Clock Out</span><div uib-timepicker ng-model="time.end_time" hour-step="1" minute-step="1" show-meridian="true">
                 </div>
               </div>
+              <!-- We use the track by statement for ng-options here to let the select box know which user should be pre-selected when the screen is opened. -->
               <div class="col-sm-6">
                 <h5>User</h5>
                 <select name="user" class="form-control" ng-model="time.user" ng-options="user.first_name + ' ' + user.last_name for user in vm.users track by user.id">
