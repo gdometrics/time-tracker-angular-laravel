@@ -88,6 +88,27 @@
         // Deselect the user
         vm.timeEntryUser = "";
       }
+
+      vm.updateTimeEntry = function(timeentry) {
+
+        // Collect the data that will be passed to the updateTime method
+        var updateTimeEntry = {
+          "id":timeentry.id,
+          "user_id":timeentry.user.id,
+          "start_time": timeentry.start_time,
+          "end_time": timeentry.end_time,
+          "comment":timeentry.comment
+        }
+
+        // Update the time entry and then refresh the list
+        time.updateTime(updateTimeEntry).then(function(success) {
+          getTimeEntries();
+          $scope.showEditDialog = false;
+          console.log(success);
+        }, function(error) {
+          console.log(error);
+        });
+      }
     }
 
 })();

@@ -67,11 +67,21 @@
         });
       }
 
+      // Use a PUT request to save the updated data passed in
+      function updateTime(data) {
+        return Time.update({id:data.id}, data).$promise.then(function(success) {
+          console.log(success);
+        }, function(error) {
+          console.log(error);
+        });
+      }
+
       return {
           getTime: getTime,
           getTimeDiff: getTimeDiff,
           getTotalTime: getTotalTime,
-          saveTime: saveTime
+          saveTime: saveTime,
+          updateTime: updateTime
       }
     }
 })();
