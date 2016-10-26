@@ -58,10 +58,20 @@
         }
       }
 
+      // Grab data passed from the view and send a POST request to the API to save the data
+      function saveTime(data) {
+        return Time.save(data).$promise.then(function(success) {
+          console.log(success);
+        }, function(error) {
+          console.log(error);
+        });
+      }
+
       return {
           getTime: getTime,
           getTimeDiff: getTimeDiff,
-          getTotalTime: getTotalTime
+          getTotalTime: getTotalTime,
+          saveTime: saveTime
       }
     }
 })();

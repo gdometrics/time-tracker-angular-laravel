@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Request;
 
 class TimeEntriesController extends Controller
 {
+  
     // Gets time entries and eager loads their associated Users
     public function index()
     {
@@ -17,4 +18,15 @@ class TimeEntriesController extends Controller
 
       return $time;
     }
+
+    // Grab all the data passed into the request and save a new record
+    public function store()
+    {
+      $data = Request::all();
+      $timeentry = new TimeEntry();
+      $timeentry->fill($data);
+      $timeentry->save();
+    }
+
+
 }
