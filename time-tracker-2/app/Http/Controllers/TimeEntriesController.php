@@ -37,5 +37,12 @@ class TimeEntriesController extends Controller
       $timeentry->save();
     }
 
+    public function destroy($id)
+    {
+      $timeentry = TimeEntry::find($id);
+
+      $timeentry->delete();
+    }
+
 
 }

@@ -109,6 +109,18 @@
           console.log(error);
         });
       }
+
+      // Specify the time entry to be deleted and pass it to the deleteTime method on the time service
+      vm.deleteTimeEntry = function(timeentry) {
+        var id = timeentry.id;
+
+        time.deleteTime(id).then(function(success) {
+          getTimeEntries();
+          console.log(success);
+        }, function(error) {
+          console.log(error);
+        })
+      }
     }
 
 })();

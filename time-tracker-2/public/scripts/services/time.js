@@ -76,12 +76,22 @@
         });
       }
 
+      // Send a DELETE request for a specific time entry
+      function deleteTime(id) {
+        return Time.delete({id:id}).$promise.then(function(success) {
+          console.log(success);
+        }, function(error) {
+          console.log(error);
+        });
+      }
+
       return {
           getTime: getTime,
           getTimeDiff: getTimeDiff,
           getTotalTime: getTotalTime,
           saveTime: saveTime,
-          updateTime: updateTime
+          updateTime: updateTime,
+          deleteTime: deleteTime
       }
     }
 })();
