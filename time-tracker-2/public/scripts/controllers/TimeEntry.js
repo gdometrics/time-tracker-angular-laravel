@@ -78,8 +78,6 @@
           console.log(error);
         });
 
-        getTimeEntries();
-
         // Reset clockIn and clockOut time to the current time
         vm.clockIn = moment();
         vm.clockOut = moment();
