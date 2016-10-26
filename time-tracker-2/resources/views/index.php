@@ -25,6 +25,9 @@
         </div>
         <div class="time-entry-comment">
           <form class="navbar-form">
+            <select name="user" class="form-control" ng-model="vm.timeEntryUser" ng-options="user.first_name + ' ' + user.last_name for user in vm.users">
+              <option value="">-- Select a user --</option>  
+            </select>
             <input class="form-control" ng-model="vm.comment" placeholder="Enter a comment">
             <button class="btn btn-primary" ng-click="vm.logNewTime()">Log Time</button>
           </form>
@@ -76,4 +79,5 @@
   <script type="text/javascript" src="scripts/app.js"></script>
   <script type="text/javascript" src="scripts/controllers/TimeEntry.js"></script>
   <script type="text/javascript" src="scripts/services/time.js"></script>
+  <script type="text/javascript" src="scripts/services/user.js"></script>
 </html>
