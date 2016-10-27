@@ -7,22 +7,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    // use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    // Use the time_entries table
+    protected $table = 'users';
+
     protected $fillable = [
         'first_name', 'last_name', 'email', 'password',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token', 'created_at', 'updated_at'
     ];

@@ -6,6 +6,10 @@
     margin-right: 15px;
 }
 
+.navbar {
+  padding-top: 10px;
+}
+
 @media (min-width: 546px) {
     .time-entry-comment {
         position: relative;
